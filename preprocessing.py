@@ -1,25 +1,16 @@
 import pandas as pd
-from sklearn.preprocessing import LabelEncoder
+import numpy as np
 
-def preprocess_weather_data(input_file="raw_data.csv", output_file="processed_data.csv"):
-    # Load the data
-    data = pd.read_csv(input_file)
+df = pd.read_csv('raw_data.csv')
+numerical_columns = ['Temperature', 'Humidity', 'Wind Speed']
 
-    # Handle missing values
-    data.fillna(data.mean(), inplace=True)
+means = df[numerical_columns].mean(axis=0)
+stds = df[numerical_columns].std(axis=0)
 
-    # Encode categorical values (e.g., "Weather Condition")
-    if "Weather Condition" in data.columns:
-        label_encoder = LabelEncoder()
-        data["Weather Condition"] = label_encoder.fit_transform(data["Weather Condition"])
+df[numerical_columns] = (df[numerical_columns] - means) / stds
 
-    # Normalize numerical fields
-    numerical_features = ["Temperature", "Humidity", "Wind Speed"]
-    data[numerical_features] = (data[numerical_features] - data[numerical_features].mean()) / data[numerical_features].std()
+conditions = df['Weather Condition'].unique()
+condition_to_label = {condition: idx for idx, condition in enumerate(conditions)}
 
-    # Save the processed data
-    data.to_csv(output_file, index=False)
-
-    print("Preprocessing complete. Processed data saved to:", output_file)
-
-preprocess_weather_data()
+df['condition_encoded'] = df['Weather Condition'].map(condition_to_label)
+df.to_csv('processed_data.csv', index=False)
