@@ -3,13 +3,13 @@ import requests
 from datetime import datetime
 
 
-API_KEY = "9f86bd54629c353cb504d520e810030d"
+API_KEY = "API_KEY"
 CITY = "London"
 URL = f"https://api.openweathermap.org/data/2.5/forecast?q={CITY}&appid={API_KEY}&units=metric"
 
 def fetch_weather_data():
     response = requests.get(URL)
-    response.raise_for_status()  # Ensure the request was successful
+    response.raise_for_status()        # - Ensure the request was successful
     return response.json()["list"]
 
 def save_weather_data(data, filename="raw_data.csv"):
