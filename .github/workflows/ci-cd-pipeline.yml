@@ -50,10 +50,11 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/weather-api:latest .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/weather-api:latest .
       
       - name: Push Docker image to DockerHub
         run: |
-          docker push s${{ secrets.DOCKER_USERNAME }}/weather-api:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/weather-api:latest
         
   
   cd_pipeline:
