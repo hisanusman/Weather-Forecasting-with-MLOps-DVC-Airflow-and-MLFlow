@@ -161,5 +161,8 @@ train_model_task = PythonOperator(
     dag=dag,
 )
 
+
+
+
 # - Task dependencies
 fetch_data_task >> preprocess_data_task >> train_model_task

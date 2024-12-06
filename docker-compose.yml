@@ -2,7 +2,7 @@ version: '3'
 
 services:
   sleek-airflow:
-    image: sleek-airflow:latest
+    image: apache/airflow
 
     volumes:
       - ./airflow:/opt/airflow
@@ -11,3 +11,17 @@ services:
       - "8080:8080"
 
     command: airflow standalone
+
+# version: '3'
+
+# services:
+#   sleek-airflow:
+#     build: 
+#       context: . 
+#       dockerfile: Dockerfile
+#     volumes:
+#       - ./airflow:/opt/airflow
+#     ports:
+#       - "8080:8080"
+#     command: airflow standalone
+
