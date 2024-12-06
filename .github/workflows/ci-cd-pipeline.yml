@@ -50,6 +50,7 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/weather-api:latest .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/weather-api:latest .
       
       - name: Push Docker image to DockerHub
         run: |
@@ -59,7 +60,7 @@ jobs:
   cd_pipeline:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/prod'
-    needs: docker_build_and_push
+    # needs: docker_build_and_push
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -79,4 +80,7 @@ jobs:
       - name: Apply Kubernetes manifests
         run: |
           kubectl apply -f k8s/deployment.yaml
+
+          
+
 
