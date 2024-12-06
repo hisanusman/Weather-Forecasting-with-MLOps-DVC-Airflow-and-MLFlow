@@ -44,13 +44,13 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t your-dockerhub-username/your-app-name:latest .
-
+          docker build -t syedoan/weather-api:latest .
+      
       - name: Push Docker image to DockerHub
         run: |
-          docker push your-dockerhub-username/your-app-name:latest 
-
-
+          docker push syedoan/weather-api:latest
+        
+  
   cd_pipeline:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/prod'
@@ -61,8 +61,17 @@ jobs:
 
       - name: Pull Docker image from DockerHub
         run: |
-          docker pull your-dockerhub-username/your-app-name:latest
+          docker pull syedoan/weather-api:latest
 
-      - name: Deploy on Kubernetes with Minikube
+      - name: Start Minikube
+        run: |
+          minikube start --driver=docker
+
+      - name: Set up kubectl
+        run: |
+          kubectl config use-context minikube
+
+      - name: Apply Kubernetes manifests
         run: |
           kubectl apply -f k8s/deployment.yaml
+
