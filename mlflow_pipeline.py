@@ -5,7 +5,7 @@ import pandas as pd
 import pickle
 import mlflow
 import mlflow.sklearn
-from mlflow.models.signature import infer_signature
+from mlflow.models.signature import infer_signature 
 
 # Set the local storage path
 LOCAL_STORAGE_PATH = r'E:\\FAST_NUCES\\SEMISTER_7_BS(AI)\\MLOPS\\project\\MLOps-Activity7\\MLOps-Activity7'
