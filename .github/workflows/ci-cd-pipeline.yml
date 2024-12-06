@@ -42,6 +42,11 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Check Docker login
+        run: |
+          docker info
+        
+
       - name: Build Docker image
         run: |
           docker build -t syedoan/weather-api:latest .
