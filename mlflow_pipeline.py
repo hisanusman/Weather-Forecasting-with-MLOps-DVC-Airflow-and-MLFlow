@@ -1,12 +1,11 @@
-# Import necessary libraries
-import mlflow
-import mlflow.sklearn
-from mlflow.models.signature import infer_signature
-import subprocess
 import os
+import subprocess
 import numpy as np
 import pandas as pd
 import pickle
+import mlflow
+import mlflow.sklearn
+from mlflow.models.signature import infer_signature
 
 # Set the local storage path
 LOCAL_STORAGE_PATH = r'E:\\FAST_NUCES\\SEMISTER_7_BS(AI)\\MLOPS\\project\\MLOps-Activity7\\MLOps-Activity7'
@@ -29,6 +28,7 @@ def preprocess_data(input_file, output_file):
     # Save processed data
     df.to_csv(output_file, index=False)
     print(f"Processed data saved to: {output_file}")
+
 
 class LinearRegressionModel:
     def __init__(self, coefficients, intercept):
@@ -116,7 +116,7 @@ def train_model(input_file, model_file):
 # Main workflow
 if __name__ == "__main__":
     raw_data_file = os.path.join(LOCAL_STORAGE_PATH, "raw_data.csv")
-    processed_data_file = os.path.join(LOCAL_STORAGE_PATH, "processed_weather_data.csv")
+    processed_data_file = os.path.join(LOCAL_STORAGE_PATH, "processed_data.csv")
     model_file_path = os.path.join(LOCAL_STORAGE_PATH, "model.pkl")
 
     # Step 1: Preprocess data

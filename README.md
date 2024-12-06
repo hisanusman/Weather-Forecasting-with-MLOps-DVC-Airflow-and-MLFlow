@@ -11,3 +11,7 @@ do it from docker desktop ->   python weather_pipeline.py
 mlflow server --host 127.0.0.1 --port 8080
 
 then run python mlflow.py
+
+
+dvc repro
+(to run dvc ymal)
