@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import pickle
 import sqlite3
+import pandas as pd
 
 app = Flask(__name__)
 
