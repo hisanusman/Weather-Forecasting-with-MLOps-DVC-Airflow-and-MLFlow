@@ -1,6 +1,6 @@
 # **Weather Forecasting with MLOps: DVC, Airflow, and MLFlow** 🌦️🚀
 
-This repository demonstrates a complete end-to-end **MLOps pipeline** for building a weather forecasting model. By leveraging tools like **DVC**, **Airflow**, and **MLFlow**, we’ve created an automated, scalable, and reproducible workflow for collecting data, training models, and monitoring performance.  
+This repository demonstrates a complete end-to-end **MLOps pipeline** for building a weather forecasting model. By leveraging tools like **DVC**, **Airflow**, and **MLFlow**, we’ve created an automated, scalable, and reproducible workflow for collecting data, training models, and monitoring performance.
 
 ---
 
@@ -10,10 +10,11 @@ This repository demonstrates a complete end-to-end **MLOps pipeline** for buildi
 3. [Architecture](#architecture)
 4. [Getting Started](#getting-started)
 5. [Usage](#usage)
-6. [Key Tools](#key-tools)
-7. [Results](#results)
-8. [Contributing](#contributing)
-9. [License](#license)
+6. [MLFlow Integration](#mlflow-integration)
+7. [Key Tools](#key-tools)
+8. [Results](#results)
+9. [Contributing](#contributing)
+10. [License](#license)
 
 ---
 
@@ -24,8 +25,8 @@ The primary goal of this project is to:
 1. Collect live weather data 🌐.
 2. Preprocess and clean the data 🧹.
 3. Train machine learning models to predict weather conditions 🤖.
-4. Automate workflows for scalability and reproducibility. ⚙️
-5. Track models and experiments for easy version control. 📊
+4. Automate workflows for scalability and reproducibility ⚙️.
+5. Track models and experiments for easy version control 📊.
 
 This project adopts **MLOps best practices** to ensure a seamless integration of machine learning into production workflows.
 
@@ -119,11 +120,64 @@ Access it at `http://localhost:5000`.
 
 ---
 
+## **MLFlow Integration** 📋
+
+### **Overview:**
+MLFlow is integrated into the pipeline for:
+- Logging model parameters (e.g., learning rate, batch size).
+- Tracking metrics (e.g., accuracy, RMSE).
+- Managing model versions and artifacts.
+- Comparing experiment results.
+
+### **Logging Model Experiments:**
+Here’s how the pipeline logs experiments to MLFlow:
+1. **Initialization**:
+   MLFlow is initialized with a remote tracking URI or a local directory.
+   ```python
+   import mlflow
+   mlflow.set_tracking_uri("http://localhost:5000")
+   mlflow.set_experiment("Weather Forecasting")
+   ```
+
+2. **Logging Parameters and Metrics**:
+   During training, parameters (e.g., hyperparameters) and metrics (e.g., validation accuracy) are logged:
+   ```python
+   with mlflow.start_run():
+       mlflow.log_param("learning_rate", 0.001)
+       mlflow.log_metric("rmse", 2.3)
+   ```
+
+3. **Storing Artifacts**:
+   Model artifacts (e.g., trained model files) are saved and versioned:
+   ```python
+   mlflow.log_artifact("models/weather_model.pkl")
+   ```
+
+4. **Model Registry**:
+   The best-performing model is promoted to production:
+   ```python
+   mlflow.register_model("models:/WeatherModel/production", "weather_model")
+   ```
+
+### **MLFlow UI**:
+The MLFlow UI provides a comprehensive interface to:
+- Compare experiments.
+- Visualize metrics.
+- Manage model versions.
+
+To launch the UI:
+```bash
+mlflow ui
+```
+Access it at `http://localhost:5000`.
+
+---
+
 ## **Key Tools** 🛠️
 
 1. **DVC**: Tracks datasets and models, ensuring reproducibility.
 2. **Airflow**: Automates pipeline tasks.
-3. **MLFlow**: Logs and tracks experiments.
+3. **MLFlow**: Logs and tracks experiments, parameters, and artifacts.
 4. **Weather API**: Provides live weather data.
 5. **Scikit-learn**: Used for model training.
 
