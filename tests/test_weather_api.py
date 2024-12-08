@@ -3,6 +3,7 @@ import requests
 from unittest import mock
 import csv
 from datetime import datetime
+import pandas as pd
 
 # API Configuration
 API_KEY = '9f86bd54629c353cb504d520e810030d'
