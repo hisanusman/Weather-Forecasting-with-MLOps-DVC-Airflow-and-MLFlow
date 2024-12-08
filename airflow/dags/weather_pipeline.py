@@ -13,7 +13,7 @@ DVC_REMOTE = os.path.join(LOCAL_STORAGE_PATH, "dvc-storage")
 
 # - Define the API URL and key
 API_URL = "http://api.openweathermap.org/data/2.5/forecast"
-API_KEY = "API_KEY"  # Replace with your API key
+API_KEY = "API_KEY"  # replace with your API key
 
 # -- Fetch Weather Data
 def fetch_weather_data():
