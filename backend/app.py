@@ -61,10 +61,6 @@ def login():
     else:
         return jsonify({"message": "Invalid credentials"}), 401
 
-<<<<<<< HEAD
-=======
-
->>>>>>> cdcf2bdd9e372325f7080b35ebb60a1875be9df9
 if __name__ == "__main__":
     init_db()
     app.run(host="0.0.0.0", port=5000)

@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1733660379666
+current_stage: None
+description: ''
+last_updated_timestamp: 1733660379666
+name: weather_forecast_model
+run_id: c72e904065dd49bea2fe70ac30294a16
+run_link: ''
+source: mlflow-artifacts:/975151958005635935/c72e904065dd49bea2fe70ac30294a16/artifacts/weather_model
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/975151958005635935/c72e904065dd49bea2fe70ac30294a16/artifacts/weather_model
+user_id: null
+version: 6

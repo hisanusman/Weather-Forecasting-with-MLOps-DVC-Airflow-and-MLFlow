@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/975151958005635935/c72e904065dd49bea2fe70ac30294a16/artifacts
+end_time: 1733660379788
+entry_point_name: ''
+experiment_id: '975151958005635935'
+lifecycle_stage: active
+run_id: c72e904065dd49bea2fe70ac30294a16
+run_name: enthused-ray-221
+run_uuid: c72e904065dd49bea2fe70ac30294a16
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733660368731
+status: 3
+tags: []
+user_id: smoau

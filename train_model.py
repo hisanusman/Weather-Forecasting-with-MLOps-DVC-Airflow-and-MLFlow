@@ -24,6 +24,7 @@ def train_model(input_file="processed_data.csv", model_file="model.pkl"):
 
     y_pred = X_test_bias @ theta
 
+
     model = {"coefficients": theta[1:], "intercept": theta[0]}
     with open(model_file, "wb") as file:
         pickle.dump(model, file)

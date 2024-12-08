@@ -15,3 +15,13 @@ then run python mlflow.py
 
 dvc repro
 (to run dvc ymal)
+
+
+To run fronend nad backend
+
+cd backend
+cd app
+python main.py
+
+cd frontend
+npx http-server .

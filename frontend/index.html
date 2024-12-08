@@ -1,17 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: url('image.avif') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.25); /* Semi-transparent white */
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        input::placeholder {
+            color: #999;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4caf50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #43a047;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #555;
+        }
+    </style>
     <script src="app.js" defer></script>
 </head>
 <body>
-    <h1>Weather Prediction</h1>
-    <form id="predict-form">
-        <input type="text" id="humidity" placeholder="Humidity" required />
-        <input type="text" id="wind_speed" placeholder="Wind Speed" required />
-        <input type="text" id="condition" placeholder="Condition (encoded)" required />
-        <button type="submit">Predict</button>
-    </form>
-    <p id="result"></p>
+    <div class="form-container">
+        <h1>Weather Prediction</h1>
+        <form id="predict-form">
+            <input type="text" id="humidity" placeholder="Humidity (e.g., 0.593)" required />
+            <input type="text" id="wind_speed" placeholder="Wind Speed (e.g., 1.135)" required />
+            <input type="text" id="condition" placeholder="Condition (encoded, e.g., 0)" required />
+            <button type="submit">Predict</button>
+        </form>
+        <p id="result">Predicted Temperature will appear here</p>
+    </div>
 </body>
 </html>

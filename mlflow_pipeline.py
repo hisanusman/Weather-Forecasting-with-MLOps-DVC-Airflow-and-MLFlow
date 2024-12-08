@@ -12,17 +12,17 @@ LOCAL_STORAGE_PATH = r'E:\\FAST_NUCES\\SEMISTER_7_BS(AI)\\MLOPS\\project\\MLOps-
 
 # Preprocess Data
 def preprocess_data(input_file, output_file):
-    df = pd.read_csv(input_file)
-
-    # Normalize numerical columns
+    df = pd.read_csv('raw_data.csv')
     numerical_columns = ['Temperature', 'Humidity', 'Wind Speed']
+
     means = df[numerical_columns].mean(axis=0)
     stds = df[numerical_columns].std(axis=0)
+
     df[numerical_columns] = (df[numerical_columns] - means) / stds
 
-    # Encode categorical data
     conditions = df['Weather Condition'].unique()
     condition_to_label = {condition: idx for idx, condition in enumerate(conditions)}
+
     df['condition_encoded'] = df['Weather Condition'].map(condition_to_label)
 
     # Save processed data
@@ -78,11 +78,11 @@ def train_model(input_file, model_file):
         print(f"Trained model saved to: {model_file}")
 
         # Log model to MLflow
-        mlflow.set_tracking_uri(os.getenv("MLFLOW_TRACKING_URI", "http://127.0.0.1:8080"))
+        mlflow.set_tracking_uri(os.getenv("MLFLOW_TRACKING_URI", "http://127.0.0.1:4040"))
         mlflow.set_experiment("Weather Data Pipeline")
 
         with mlflow.start_run():
-            mlflow.log_params({"test_size": 0.1, "random_seed": 32})
+            mlflow.log_params({"test_size": 0.2, "random_seed": 42})
 
             y_train_pred = X_train_bias @ theta
             y_test_pred = X_test_bias @ theta
@@ -117,7 +117,7 @@ def train_model(input_file, model_file):
 if __name__ == "__main__":
     raw_data_file = os.path.join(LOCAL_STORAGE_PATH, "raw_data.csv")
     processed_data_file = os.path.join(LOCAL_STORAGE_PATH, "processed_data.csv")
-    model_file_path = os.path.join(LOCAL_STORAGE_PATH, "model.pkl")
+    model_file_path = os.path.join(LOCAL_STORAGE_PATH, "model_.pkl")
 
     # Step 1: Preprocess data
     preprocess_data(raw_data_file, processed_data_file)
