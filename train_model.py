@@ -1,6 +1,6 @@
 import pandas as pd
-import numpy as np
 import pickle
+import numpy as np
 
 def train_model(input_file="processed_data.csv", model_file="model.pkl"):
     data = pd.read_csv(input_file)
