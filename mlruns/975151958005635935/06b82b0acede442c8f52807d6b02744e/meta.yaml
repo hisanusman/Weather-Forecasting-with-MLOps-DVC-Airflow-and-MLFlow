@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/975151958005635935/06b82b0acede442c8f52807d6b02744e/artifacts
+end_time: 1733660991469
+entry_point_name: ''
+experiment_id: '975151958005635935'
+lifecycle_stage: active
+run_id: 06b82b0acede442c8f52807d6b02744e
+run_name: bold-crab-721
+run_uuid: 06b82b0acede442c8f52807d6b02744e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733660983196
+status: 3
+tags: []
+user_id: smoau

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/975151958005635935/a2e93f2935914a1d97fe85c7d5c8cd2e/artifacts
+end_time: 1733476329601
+entry_point_name: ''
+experiment_id: '975151958005635935'
+lifecycle_stage: active
+run_id: a2e93f2935914a1d97fe85c7d5c8cd2e
+run_name: welcoming-seal-271
+run_uuid: a2e93f2935914a1d97fe85c7d5c8cd2e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733476320845
+status: 3
+tags: []
+user_id: smoau

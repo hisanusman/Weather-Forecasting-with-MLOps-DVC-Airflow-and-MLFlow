@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/975151958005635935/882eba55dc2a486aa1a10559882ed58b/artifacts
+end_time: 1733476286067
+entry_point_name: ''
+experiment_id: '975151958005635935'
+lifecycle_stage: active
+run_id: 882eba55dc2a486aa1a10559882ed58b
+run_name: inquisitive-snipe-58
+run_uuid: 882eba55dc2a486aa1a10559882ed58b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733476285907
+status: 4
+tags: []
+user_id: smoau

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/975151958005635935/ca94878ad9c54435b75074730b0721c1/artifacts
+end_time: 1733481810417
+entry_point_name: ''
+experiment_id: '975151958005635935'
+lifecycle_stage: active
+run_id: ca94878ad9c54435b75074730b0721c1
+run_name: gregarious-trout-559
+run_uuid: ca94878ad9c54435b75074730b0721c1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733481801315
+status: 3
+tags: []
+user_id: smoau

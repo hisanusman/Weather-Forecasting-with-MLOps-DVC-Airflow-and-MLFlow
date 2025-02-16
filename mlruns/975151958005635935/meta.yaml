@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/975151958005635935
+creation_time: 1733471552211
+experiment_id: '975151958005635935'
+last_update_time: 1733471552211
+lifecycle_stage: active
+name: Weather Data Pipeline

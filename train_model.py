@@ -1,6 +1,6 @@
 import pandas as pd
-import numpy as np
 import pickle
+import numpy as np
 
 def train_model(input_file="processed_data.csv", model_file="model.pkl"):
     data = pd.read_csv(input_file)
@@ -23,6 +23,7 @@ def train_model(input_file="processed_data.csv", model_file="model.pkl"):
     theta = np.linalg.inv(X_train_bias.T @ X_train_bias) @ X_train_bias.T @ y_train
 
     y_pred = X_test_bias @ theta
+
 
     model = {"coefficients": theta[1:], "intercept": theta[0]}
     with open(model_file, "wb") as file:

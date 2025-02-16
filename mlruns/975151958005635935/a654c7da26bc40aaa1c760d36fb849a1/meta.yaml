@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/975151958005635935/a654c7da26bc40aaa1c760d36fb849a1/artifacts
+end_time: 1733476037264
+entry_point_name: ''
+experiment_id: '975151958005635935'
+lifecycle_stage: active
+run_id: a654c7da26bc40aaa1c760d36fb849a1
+run_name: righteous-duck-339
+run_uuid: a654c7da26bc40aaa1c760d36fb849a1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733476028627
+status: 3
+tags: []
+user_id: smoau

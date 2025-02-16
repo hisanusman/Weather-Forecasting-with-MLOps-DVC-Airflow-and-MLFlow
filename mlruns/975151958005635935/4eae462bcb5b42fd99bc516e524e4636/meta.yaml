@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/975151958005635935/4eae462bcb5b42fd99bc516e524e4636/artifacts
+end_time: 1733471562758
+entry_point_name: ''
+experiment_id: '975151958005635935'
+lifecycle_stage: active
+run_id: 4eae462bcb5b42fd99bc516e524e4636
+run_name: big-turtle-821
+run_uuid: 4eae462bcb5b42fd99bc516e524e4636
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733471552810
+status: 3
+tags: []
+user_id: smoau
